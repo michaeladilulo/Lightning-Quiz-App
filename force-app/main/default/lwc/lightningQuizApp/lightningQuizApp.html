@@ -9,16 +9,20 @@
                                 </strong>
                             </div>
                                 <div class="slds-grid slds-gutters">
-                                    <div class="slds-col">
+                                    <div class="slds-col slds-m-around_small">
+                                        <input type="radio" name={quizQuestion.id} value="a" onchange={changeHandler}/>
                                       {quizQuestion.answers.a}
                                     </div>
-                                    <div class="slds-col">
+                                    <div class="slds-col slds-m-around_small">
+                                        <input type="radio" name={quizQuestion.id} value="b" onchange={changeHandler}/>
                                       {quizQuestion.answers.b}
                                     </div>
-                                    <div class="slds-col">
+                                    <div class="slds-col slds-m-around_small">
+                                        <input type="radio" name={quizQuestion.id} value="c" onchange={changeHandler}/>
                                       {quizQuestion.answers.c}
                                     </div>
-                                    <div class="slds-col">
+                                    <div class="slds-col slds-m-around_small">
+                                        <input type="radio" name={quizQuestion.id} value="d" onchange={changeHandler}/>
                                         {quizQuestion.answers.d}
                                       </div>
                                   </div>
