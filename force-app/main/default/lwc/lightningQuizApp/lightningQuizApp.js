@@ -5,6 +5,12 @@ export default class LightningQuizApp extends LightningElement {
     submittedExamQuestions = false;
     correctAnswers = 0;
 
+    get isScoredFull() {
+        return `slds-text-heading_small ${this.examQuestions.length === this.correctAnswers ? 
+        `slds-text-color_success` : `slds-text-color_error`}` 
+
+    }
+
     get allNotSelected() {
        return !(Object.keys(this.selected).length === this.examQuestions.length)
     }
@@ -61,5 +67,6 @@ export default class LightningQuizApp extends LightningElement {
     resetHandler() {
         this.selected = {}
         this.correctAnswers = 0;
+        this.submittedExamQuestions = false;
     }
 }

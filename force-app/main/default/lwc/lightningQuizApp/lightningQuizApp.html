@@ -2,7 +2,7 @@
     <lightning-card title="Lightning Quiz Card">
         <div class="slds-m-around_medium">
             <template if:true={submittedExamQuestions}>
-                <div>You have scored {correctAnswers} / {examQuestions.length}</div>
+                <div class={isScoredFull}>You have scored {correctAnswers} / {examQuestions.length}</div>
             </template>
             
             <form>
