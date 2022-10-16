@@ -7,7 +7,21 @@
                                 <strong>
                                     {quizQuestion.id} - {quizQuestion.question}
                                 </strong>
-                        </div>
+                            </div>
+                                <div class="slds-grid slds-gutters">
+                                    <div class="slds-col">
+                                      {quizQuestion.answers.a}
+                                    </div>
+                                    <div class="slds-col">
+                                      {quizQuestion.answers.b}
+                                    </div>
+                                    <div class="slds-col">
+                                      {quizQuestion.answers.c}
+                                    </div>
+                                    <div class="slds-col">
+                                        {quizQuestion.answers.d}
+                                      </div>
+                                  </div>
                 </div>
             </template>
         </div>
