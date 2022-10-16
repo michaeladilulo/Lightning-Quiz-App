@@ -1,6 +1,7 @@
 <template>
     <lightning-card title="Lightning Quiz Card">
         <div class="slds-m-around_medium">
+            <form>
             <template for:each={examQuestions} for:item="quizQuestion">
                 <div key={quizQuestion.id}>
                         <div>
@@ -28,6 +29,22 @@
                                   </div>
                 </div>
             </template>
+            <lightning-button 
+            type="submit" 
+            variant="brand" 
+            label="submit" 
+            title="Submit Quiz" 
+            class="slds-m-around_small" 
+            disabled={allNotSelected}
+            onclick={submitHandler}>Submit</lightning-button>
+            <lightning-button 
+            type="reset" 
+            variant="brand" 
+            label="reset" 
+            title="Reset Quiz" 
+            class="slds-m-around_small" 
+            onclick={resetHandler}>Submit</lightning-button>
+        </form>
         </div>
     </lightning-card>
 </template>

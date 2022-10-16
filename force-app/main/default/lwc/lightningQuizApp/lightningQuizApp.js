@@ -1,6 +1,12 @@
 import { LightningElement } from 'lwc';
 
 export default class LightningQuizApp extends LightningElement {
+    selected={}  // stores options 
+
+    get allNotSelected() {
+       return !(Object.keys(this.selected).length === this.examQuestions.length)
+    }
+
     examQuestions = [
         {
             id: 'Question One',
@@ -38,7 +44,15 @@ export default class LightningQuizApp extends LightningElement {
     ]
 
     changeHandler(event) {
-        console.log('NAME>>>', event.target.name)
-        console.log('VALUE>>>', event.target.value);
+        const {name, value} = event.target; // destructuring
+        this.selected = {...this.selected, [name]: value}
+    }
+
+    submitHandler() {
+
+    }
+
+    resetHandler() {
+
     }
 }
