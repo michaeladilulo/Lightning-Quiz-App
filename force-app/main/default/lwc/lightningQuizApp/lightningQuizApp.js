@@ -2,6 +2,7 @@ import { LightningElement } from 'lwc';
 
 export default class LightningQuizApp extends LightningElement {
     selected={}  // stores options 
+    submittedExamQuestions = false;
     correctAnswers = 0;
 
     get allNotSelected() {
@@ -53,6 +54,7 @@ export default class LightningQuizApp extends LightningElement {
         event.preventDefault();
         let correct = this.examQuestions.filter(item => this.selected[item.id] === item.correctAnswer)
         this.correctAnswers = correct.length;
+        this.submittedExamQuestions = true;
         console.log('correct answers', this.correctAnswers);
     }
 
