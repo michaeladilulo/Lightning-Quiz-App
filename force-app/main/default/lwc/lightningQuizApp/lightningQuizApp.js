@@ -5,14 +5,14 @@ export default class LightningQuizApp extends LightningElement {
     submittedExamQuestions = false;
     correctAnswers = 0;
 
-    get isScoredFull() {
+    get isScoredFull() { // if 3/3 questions answered correct show green, else show red
         return `slds-text-heading_small ${this.examQuestions.length === this.correctAnswers ? 
         `slds-text-color_success` : `slds-text-color_error`}` 
 
     }
 
     get allNotSelected() {
-       return !(Object.keys(this.selected).length === this.examQuestions.length)
+       return !(Object.keys(this.selected).length === this.examQuestions.length) // used for enable button
     }
 
     examQuestions = [
@@ -53,18 +53,18 @@ export default class LightningQuizApp extends LightningElement {
 
     changeHandler(event) {
         const {name, value} = event.target; // destructuring
-        this.selected = {...this.selected, [name]: value}
+        this.selected = {...this.selected, [name]: value} // spreading selected and inserting name and value
     }
 
     submitHandler(event) {
         event.preventDefault();
+        // correct = filter items selected against the correct answer
         let correct = this.examQuestions.filter(item => this.selected[item.id] === item.correctAnswer)
         this.correctAnswers = correct.length;
         this.submittedExamQuestions = true;
-        console.log('correct answers', this.correctAnswers);
     }
 
-    resetHandler() {
+    resetHandler() { // resets it back to original state of app
         this.selected = {}
         this.correctAnswers = 0;
         this.submittedExamQuestions = false;
