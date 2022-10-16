@@ -1,7 +1,15 @@
 <template>
     <lightning-card title="Lightning Quiz Card">
         <div class="slds-m-around_medium">
-            Lightning Quiz Application, Let's get ready to rumble!
+            <template for:each={examQuestions} for:item="quizQuestion">
+                <div key={quizQuestion.id}>
+                        <div>
+                                <strong>
+                                    {quizQuestion.id} - {quizQuestion.question}
+                                </strong>
+                        </div>
+                </div>
+            </template>
         </div>
     </lightning-card>
 </template>
